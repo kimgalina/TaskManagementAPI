@@ -2,6 +2,7 @@ package kg.kim.TaskManagementAPI.entity;
 
 import jakarta.persistence.*;
 import kg.kim.TaskManagementAPI.enums.Role;
+import kg.kim.TaskManagementAPI.enums.UserStatus;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -25,12 +26,15 @@ public class User {
 
     private String firstName;
 
-    private String LastName;
+    private String lastName;
 
     private String phone;
 
     @Enumerated(EnumType.STRING)
     private Role role;
+
+    @Enumerated(EnumType.STRING)
+    private UserStatus status;
 
     @ManyToMany
     @JoinTable(

@@ -1,6 +1,7 @@
 package kg.kim.TaskManagementAPI.entity;
 
 import jakarta.persistence.*;
+import kg.kim.TaskManagementAPI.enums.TaskStatus;
 import lombok.Data;
 
 import java.util.List;
@@ -20,4 +21,7 @@ public class Task {
     @ManyToOne
     @JoinColumn(name="project_id", nullable=false)
     private Project project;
+
+    @Enumerated(EnumType.STRING)
+    private TaskStatus status;
 }
