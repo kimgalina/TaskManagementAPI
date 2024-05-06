@@ -2,6 +2,7 @@ package kg.kim.TaskManagementAPI.controller;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
+import kg.kim.TaskManagementAPI.payload.token.RefreshTokenRequest;
 import kg.kim.TaskManagementAPI.payload.user.UserCreateRequest;
 import kg.kim.TaskManagementAPI.payload.user.UserCreateResponse;
 import kg.kim.TaskManagementAPI.payload.user.UserSignInRequest;
@@ -31,4 +32,8 @@ public class AuthController {
         return authService.authenticate(userRequest);
     }
 
+    @PostMapping("/refresh-token")
+    public ResponseEntity<UserSignInResponse> refreshTokens(@RequestBody RefreshTokenRequest refreshTokenRequestDTO) {
+        return authService.refreshToken(refreshTokenRequestDTO);
+    }
 }
