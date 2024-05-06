@@ -1,7 +1,6 @@
 package kg.kim.TaskManagementAPI.entity;
 
 import jakarta.persistence.Entity;
-import jakarta.validation.constraints.Email;
 import lombok.NoArgsConstructor;
 
 @Entity
