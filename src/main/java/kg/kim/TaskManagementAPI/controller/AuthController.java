@@ -36,4 +36,9 @@ public class AuthController {
     public ResponseEntity<UserSignInResponse> refreshTokens(@RequestBody RefreshTokenRequest refreshTokenRequestDTO) {
         return authService.refreshToken(refreshTokenRequestDTO);
     }
+
+    @GetMapping("/verify")
+    public ResponseEntity<String> verificationByEmail(@RequestParam("token") String token){
+        return authService.checkUserVerification(token);
+    }
 }

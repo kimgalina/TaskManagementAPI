@@ -14,4 +14,6 @@ public interface AuthService {
     ResponseEntity<UserSignInResponse> authenticate(UserSignInRequest userRequest);
     ResponseEntity<UserSignInResponse> refreshToken(RefreshTokenRequest refreshToken);
 
+    ResponseEntity<String> checkUserVerification(String token);
+
 }
